@@ -1,4 +1,5 @@
 import random
+import os
 words = ["phone", "cruise ship", "soccer", "movie", "vacation home", "road trip", "tortoise"]
 
 wordIndex = random.randint(0,6)
@@ -6,7 +7,11 @@ word = words[wordIndex]
 wordSolved = False
 correctGuessedLetters = []
 for i in range(0, len(word)):
-    correctGuessedLetters.append(" ")
+    if word[i] == " ":
+        correctGuessedLetters.append(" ")
+    else:
+        correctGuessedLetters.append("_")
+print(" ".join(correctGuessedLetters))
 while not wordSolved:
     indexesContainingGuessedLetter = []
     choice = input("Enter a letter: ")
@@ -17,3 +22,6 @@ while not wordSolved:
             #add correctly guessed letters to their corresponding index in the mystery word
             correctGuessedLetters[indexesContainingGuessedLetter[x]] = choice
     print(" ".join(correctGuessedLetters))
+    if "_" not in correctGuessedLetters:
+        print("Puzzle Solved!")
+        wordSolved = True
