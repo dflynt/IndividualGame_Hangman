@@ -5,6 +5,7 @@ The user has an infinite number of guesses and after each successful letter gues
 the underscore.
 
 Example:
+
 After running game.py:
 
 _ _ _ _ _
@@ -16,6 +17,7 @@ _ _ _ i _
 After solving the puzzle:
 
 m o v i e
+
 Puzzle Solved!
 
 Program Flow:
